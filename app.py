@@ -27,8 +27,18 @@ div[data-testid="stMetric"] { background:white; border:1px solid #e2e8f0; paddin
 </style>
 """, unsafe_allow_html=True)
 
-API_URL = st.session_state.get("api_url", "http://127.0.0.1:8000")
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+try:
+    API_URL = st.secrets.get(
+        "API_URL",
+        os.getenv("API_URL", "http://127.0.0.1:8000")
+    )
+except Exception:
+    API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 if "user" not in st.session_state:
     st.session_state.user = None
 
