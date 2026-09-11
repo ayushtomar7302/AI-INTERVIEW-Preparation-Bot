@@ -27,18 +27,7 @@ div[data-testid="stMetric"] { background:white; border:1px solid #e2e8f0; paddin
 </style>
 """, unsafe_allow_html=True)
 
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-try:
-    API_URL = st.secrets.get(
-        "API_URL",
-        os.getenv("API_URL", "http://127.0.0.1:8000")
-    )
-except Exception:
-    API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
+API_URL = "https://ai-interview-preparation-bot-3gf7.onrender.com"
 if "user" not in st.session_state:
     st.session_state.user = None
 
