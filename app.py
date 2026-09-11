@@ -18,10 +18,33 @@ html, body, [class*="css"] {
 }
 
 .stApp {
-    background:
-        radial-gradient(circle at 10% 0%, rgba(99,102,241,.12), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(16,185,129,.10), transparent 25%),
-        #f8fafc;
+    background: #f8fafc;
+}
+
+
+/* =========================
+   STREAMLIT TOP BAR
+   ========================= */
+
+header[data-testid="stHeader"] {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+header[data-testid="stHeader"] > div {
+    background: #ffffff !important;
+}
+
+/* Top bar text and icons */
+header[data-testid="stHeader"] * {
+    color: #1e293b !important;
+}
+
+/* Share / Deploy / menu buttons */
+header[data-testid="stHeader"] button {
+    color: #1e293b !important;
+    background: transparent !important;
 }
 
 /* Main text - BLACK/DARK */
